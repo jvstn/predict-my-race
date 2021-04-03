@@ -1,9 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+
+import mileageReducer from '../features/mileage/mileageSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    mileage: mileageReducer,
   },
 });
 
