@@ -1,3 +1,4 @@
 export {default as GlassButton} from './GlassButton'
-export {default as GlassInput} from './GlassInput'
+export {default as MileageInput} from './MileageInput'
+export {default as TimeInput} from './TimeInput'
 
