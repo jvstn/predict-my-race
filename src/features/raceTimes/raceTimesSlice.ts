@@ -41,12 +41,12 @@ const raceTimesSlice = createSlice({
       raceTwo.time = payload;
     },
     setHasSecondRace: (
-      { hasSecondRace },
+      state,
       { payload }: PayloadAction<boolean>
     ) => {
-      hasSecondRace = payload;
-    },
-  },
+      state.hasSecondRace = payload;
+    }
+  }
 });
 
 export const {

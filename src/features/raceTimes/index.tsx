@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useAppSelector } from "../../app/hooks";
-import { TimeInput } from "../../components/Shared";
+import { GlassButton, TimeInput } from "../../components/Shared";
+import { EtchedH3 } from "../../components/Shared/EtchedText";
 import GlassPane from "../../components/Shared/GlassPane";
 import ChipWrap from "./RaceTimesElements/ChipWrap";
 import { GlassChip } from "./RaceTimesElements/GlassChip";
 import { TimeWrap } from "./RaceTimesElements/TimeWrap";
-import { setRaceOneTime, setRaceOneType, setRaceTwoTime, setRaceTwoType } from "./raceTimesSlice";
+import {
+  setHasSecondRace,
+  setRaceOneTime,
+  setRaceOneType,
+  setRaceTwoTime,
+  setRaceTwoType,
+} from "./raceTimesSlice";
 import { convertInputToSeconds, convertSecondsToHHMMSS } from "./util";
 
 export default function RaceTimes() {
@@ -15,7 +22,7 @@ export default function RaceTimes() {
     (state) => state.raceTimes.hasSecondRace
   );
 
-  const [timeValue, setTimeValue] = useState<any>("0:00");
+  const [timeValue, setTimeValue] = useState<string>("0:00:00");
 
   const handleChip = (e: any) => {
     if (!hasSecondRace) {
@@ -23,20 +30,35 @@ export default function RaceTimes() {
     } else {
       dispatch(setRaceTwoType(e.target.value));
     }
-  }
+  };
   const processTimeValue = (e: any) => {
     const value = e.target.value;
-    const seconds = convertInputToSeconds(value)
+    const seconds = convertInputToSeconds(value);
 
-    dispatch(!hasSecondRace ? setRaceOneTime(seconds) : setRaceTwoTime(seconds))
+    dispatch(
+      !hasSecondRace ? setRaceOneTime(seconds) : setRaceTwoTime(seconds)
+    );
 
-    const processedValue = convertSecondsToHHMMSS(seconds)
+    const processedValue = convertSecondsToHHMMSS(seconds);
+
+    setTimeValue(processedValue);
+  };
+
+  const handleSecondRace = () => {
+    setTimeValue("0:00:00");
+    dispatch(setHasSecondRace(!hasSecondRace))
+  };
+  const calculatePredictions = () => {
     
-    setTimeValue(processedValue)
-    };
+  }
   return (
     <div>
       <GlassPane>
+        <EtchedH3>
+          {!hasSecondRace
+            ? "First Race Time & Distance"
+            : "Second Race Time & Distance"}
+        </EtchedH3>
         <ChipWrap>
           <GlassChip type="10k" onClick={handleChip} />
           <GlassChip type="5k" onClick={handleChip} />
@@ -46,12 +68,14 @@ export default function RaceTimes() {
         <TimeWrap>
           <TimeInput
             type="text"
-            name='time-input'
+            name="time-input"
             value={timeValue}
             onChange={(e) => setTimeValue(e.target.value)}
             onBlur={processTimeValue}
           />
         </TimeWrap>
+        <GlassButton onClick={calculatePredictions}>Use Only One Race</GlassButton>
+        <GlassButton onClick={handleSecondRace}>Add Second Race</GlassButton>
       </GlassPane>
     </div>
   );

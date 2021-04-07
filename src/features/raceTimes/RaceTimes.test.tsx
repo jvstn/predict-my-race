@@ -30,7 +30,7 @@ describe("RaceTimes Reducers", () => {
         <RaceTimes />
       </Provider>
     );
-    const input = screen.getByDisplayValue("0:00");
+    const input = screen.getByDisplayValue("0:00:00");
 
     fireEvent.change(input, { target: { value: "1:65:65" } });
 
@@ -45,7 +45,7 @@ describe("RaceTimes Reducers", () => {
         <RaceTimes />
       </Provider>
     );
-    const input = screen.getByDisplayValue("0:00");
+    const input = screen.getByDisplayValue("0:00:00");
 
     fireEvent.change(input, { target: { value: "1:65:65" } });
 
