@@ -1,13 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { getDistanceInMeters } from "./util";
 
 interface RaceTimeState {
   hasSecondRace: boolean;
   raceOne: {
-    type: string;
+    distance: number;
     time: number;
   };
   raceTwo: {
-    type: string | undefined;
+    distance: number | undefined;
     time: number | undefined;
   };
 }
@@ -15,11 +16,11 @@ interface RaceTimeState {
 export const initialState: RaceTimeState = {
   hasSecondRace: false,
   raceOne: {
-    type: "5k",
+    distance: 5000,
     time: 0,
   },
   raceTwo: {
-    type: undefined,
+    distance: undefined,
     time: undefined,
   },
 };
@@ -28,11 +29,11 @@ const raceTimesSlice = createSlice({
   name: "raceTimes",
   initialState,
   reducers: {
-    setRaceOneType: ({ raceOne }, { payload }: PayloadAction<string>) => {
-      raceOne.type = payload;
+    setRaceOneDistance: ({ raceOne }, { payload }: PayloadAction<string>) => {
+      raceOne.distance = getDistanceInMeters(payload);
     },
-    setRaceTwoType: ({ raceTwo }, { payload }: PayloadAction<string>) => {
-      raceTwo.type = payload;
+    setRaceTwoDistance: ({ raceTwo }, { payload }: PayloadAction<string>) => {
+      raceTwo.distance = getDistanceInMeters(payload);
     },
     setRaceOneTime: ({ raceOne }, { payload }: PayloadAction<number>) => {
       raceOne.time = payload;
@@ -40,20 +41,17 @@ const raceTimesSlice = createSlice({
     setRaceTwoTime: ({ raceTwo }, { payload }: PayloadAction<number>) => {
       raceTwo.time = payload;
     },
-    setHasSecondRace: (
-      state,
-      { payload }: PayloadAction<boolean>
-    ) => {
+    setHasSecondRace: (state, { payload }: PayloadAction<boolean>) => {
       state.hasSecondRace = payload;
-    }
-  }
+    },
+  },
 });
 
 export const {
   setRaceOneTime,
   setRaceTwoTime,
-  setRaceOneType,
-  setRaceTwoType,
+  setRaceOneDistance,
+  setRaceTwoDistance,
   setHasSecondRace,
 } = raceTimesSlice.actions;
 export default raceTimesSlice.reducer;

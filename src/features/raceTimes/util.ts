@@ -36,4 +36,24 @@ export const convertSecondsToHHMMSS = (seconds: number): string => {
   
 }
 
+export const getDistanceInMeters = (distance: string): number => {
+  let meters = 0
+  switch (distance) {
+    case "5k":
+      meters = 5000
+      break;
+    case "10k":
+      meters = 10000
+      break;
+    case "13.1":
+      meters = 21097.5;
+      break;
+    case "26.2":
+      meters = 42195;
+      break;
+    default:
+  }
+  return meters
+}
+
 
