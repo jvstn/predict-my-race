@@ -10,9 +10,10 @@ import { TimeWrap } from "./RaceTimesElements/TimeWrap";
 import {
   setHasSecondRace,
   setRaceOneTime,
-  setRaceOneType,
+  setRaceOneDistance,
   setRaceTwoTime,
-  setRaceTwoType,
+  setRaceTwoDistance,
+  setInputsComplete
 } from "./raceTimesSlice";
 import { convertInputToSeconds, convertSecondsToHHMMSS } from "./util";
 
@@ -26,9 +27,9 @@ export default function RaceTimes() {
 
   const handleChip = (e: any) => {
     if (!hasSecondRace) {
-      dispatch(setRaceOneType(e.target.value));
+      dispatch(setRaceOneDistance(e.target.value));
     } else {
-      dispatch(setRaceTwoType(e.target.value));
+      dispatch(setRaceTwoDistance(e.target.value));
     }
   };
   const processTimeValue = (e: any) => {
@@ -49,7 +50,7 @@ export default function RaceTimes() {
     dispatch(setHasSecondRace(!hasSecondRace))
   };
   const calculatePredictions = () => {
-    
+    dispatch(setInputsComplete(true))
   }
   return (
     <div>

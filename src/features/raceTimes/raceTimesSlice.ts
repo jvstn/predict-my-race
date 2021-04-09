@@ -3,6 +3,7 @@ import { getDistanceInMeters } from "./util";
 
 interface RaceTimeState {
   hasSecondRace: boolean;
+  inputsComplete: boolean;
   raceOne: {
     distance: number;
     time: number;
@@ -15,6 +16,7 @@ interface RaceTimeState {
 
 export const initialState: RaceTimeState = {
   hasSecondRace: false,
+  inputsComplete: false,
   raceOne: {
     distance: 5000,
     time: 0,
@@ -44,6 +46,10 @@ const raceTimesSlice = createSlice({
     setHasSecondRace: (state, { payload }: PayloadAction<boolean>) => {
       state.hasSecondRace = payload;
     },
+    setInputsComplete: (state, { payload }: PayloadAction<boolean>) => {
+      state.inputsComplete = payload;
+    },
+    
   },
 });
 
@@ -53,5 +59,6 @@ export const {
   setRaceOneDistance,
   setRaceTwoDistance,
   setHasSecondRace,
+  setInputsComplete
 } = raceTimesSlice.actions;
 export default raceTimesSlice.reducer;
