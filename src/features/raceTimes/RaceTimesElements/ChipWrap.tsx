@@ -5,7 +5,7 @@ const ChipWrap = styled.div`
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   width: 30vh;
   height: 200px;

@@ -1,4 +1,4 @@
 body {
-  background: linear-gradient(to right, #162F77, #FFAE5A);
-  
+  background: url(./assets/background-running.jpg) top / cover no-repeat
+
 }

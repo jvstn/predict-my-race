@@ -2,19 +2,21 @@ import React from "react";
 import styled from "styled-components";
 
 const TimeInput = styled.input`
-  background: transparent;
+  background: rgba(0, 0, 0, 0.6);
   width: 20vh;
   height: 1vh;
   padding: 0.8em;
   margin-bottom: 2em;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.25);
+  border: 1px solid white;
   border-radius: 20px;
-  backdrop-filter: blur(5px);
   color: #fff;
   font-size: 40px;
   text-shadow: 2px 2px 40px rgba(0, 0, 0, 0.25);
+
+  &:focus {
+    outline: 0;
+
+  }
 `;
 
 export default TimeInput;

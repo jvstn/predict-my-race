@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../app/hooks";
 import { GlassButton, TimeInput } from "../../components/Shared";
 import { EtchedH3 } from "../../components/Shared/EtchedText";
-import GlassPane from "../../components/Shared/GlassPane";
+import { ButtonWrap, GlassChip, TimeWrap } from "./RaceTimesElements";
 import ChipWrap from "./RaceTimesElements/ChipWrap";
-import { GlassChip } from "./RaceTimesElements/GlassChip";
-import { TimeWrap } from "./RaceTimesElements/TimeWrap";
 import {
   setHasSecondRace,
   setRaceOneTime,
@@ -21,6 +19,9 @@ export default function RaceTimes() {
   const dispatch = useDispatch();
   const hasSecondRace = useAppSelector(
     (state) => state.raceTimes.hasSecondRace
+  );
+  const timeOne = useAppSelector(
+    (state) => state.raceTimes.raceOne.time
   );
 
   const [timeValue, setTimeValue] = useState<string>("0:00:00");
@@ -46,7 +47,7 @@ export default function RaceTimes() {
   };
 
   const handleSecondRace = () => {
-    setTimeValue("0:00:00");
+    setTimeValue(!hasSecondRace ? "0:00:00" : convertSecondsToHHMMSS(timeOne));
     dispatch(setHasSecondRace(!hasSecondRace))
   };
   const calculatePredictions = () => {
@@ -54,15 +55,15 @@ export default function RaceTimes() {
   }
   return (
     <div>
-      <GlassPane>
+      
         <EtchedH3>
           {!hasSecondRace
             ? "First Race Time & Distance"
             : "Second Race Time & Distance"}
         </EtchedH3>
         <ChipWrap>
-          <GlassChip type="10k" onClick={handleChip} />
           <GlassChip type="5k" onClick={handleChip} />
+          <GlassChip type="10k" onClick={handleChip} />
           <GlassChip type="13.1" onClick={handleChip} />
           <GlassChip type="26.2" onClick={handleChip} />
         </ChipWrap>
@@ -75,9 +76,15 @@ export default function RaceTimes() {
             onBlur={processTimeValue}
           />
         </TimeWrap>
-        <GlassButton onClick={calculatePredictions}>Use Only One Race</GlassButton>
-        <GlassButton onClick={handleSecondRace}>Add Second Race</GlassButton>
-      </GlassPane>
+        <ButtonWrap>
+          <GlassButton onClick={!hasSecondRace ? calculatePredictions : handleSecondRace}>
+            {!hasSecondRace ? 'Use One Race' : 'Back' }
+          </GlassButton>
+          <GlassButton onClick={!hasSecondRace ? handleSecondRace : calculatePredictions}>
+            {!hasSecondRace ?'Next' : 'Predict'}
+          </GlassButton>
+        </ButtonWrap>
+
     </div>
   );
 }
