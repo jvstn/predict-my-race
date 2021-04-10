@@ -25,13 +25,16 @@ export default function RaceTimes() {
   );
 
   const [timeValue, setTimeValue] = useState<string>("0:00:00");
+  const [distanceValue, setDistanceValue] = useState<string>("");
 
   const handleChip = (e: any) => {
+    const value = e.target.value
     if (!hasSecondRace) {
-      dispatch(setRaceOneDistance(e.target.value));
+      dispatch(setRaceOneDistance(value));
     } else {
-      dispatch(setRaceTwoDistance(e.target.value));
+      dispatch(setRaceTwoDistance(value));
     }
+    setDistanceValue(value)
   };
   const processTimeValue = (e: any) => {
     const value = e.target.value;
@@ -50,9 +53,14 @@ export default function RaceTimes() {
     setTimeValue(!hasSecondRace ? "0:00:00" : convertSecondsToHHMMSS(timeOne));
     dispatch(setHasSecondRace(!hasSecondRace))
   };
+  
   const calculatePredictions = () => {
     dispatch(setInputsComplete(true))
+    dispatch(
+      !hasSecondRace ? setRaceOneTime(convertInputToSeconds(timeValue)) : setRaceTwoTime(convertInputToSeconds(timeValue))
+    );
   }
+
   return (
     <div>
       
@@ -62,10 +70,10 @@ export default function RaceTimes() {
             : "Second Race Time & Distance"}
         </EtchedH3>
         <ChipWrap>
-          <GlassChip type="5k" onClick={handleChip} />
-          <GlassChip type="10k" onClick={handleChip} />
-          <GlassChip type="13.1" onClick={handleChip} />
-          <GlassChip type="26.2" onClick={handleChip} />
+          <GlassChip selected={distanceValue === "5k"} type="5k" onClick={handleChip} />
+          <GlassChip selected={distanceValue === "10k"} type="10k" onClick={handleChip} />
+          <GlassChip selected={distanceValue === "13.1"}  type="13.1" onClick={handleChip} />
+          <GlassChip selected={distanceValue === "26.2"}  type="26.2" onClick={handleChip} />
         </ChipWrap>
         <TimeWrap>
           <TimeInput
@@ -80,7 +88,7 @@ export default function RaceTimes() {
           <GlassButton onClick={!hasSecondRace ? calculatePredictions : handleSecondRace}>
             {!hasSecondRace ? 'Use One Race' : 'Back' }
           </GlassButton>
-          <GlassButton onClick={!hasSecondRace ? handleSecondRace : calculatePredictions}>
+          <GlassButton accent onClick={!hasSecondRace ? handleSecondRace : calculatePredictions}>
             {!hasSecondRace ?'Next' : 'Predict'}
           </GlassButton>
         </ButtonWrap>
