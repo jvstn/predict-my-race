@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import RacePredictions from './RacePrediction';
 import { CardWrap } from './Elements';
 import BackgroundDiv from './Elements/BackgroundDiv';

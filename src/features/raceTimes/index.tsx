@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../app/hooks";
 import { GlassButton, TimeInput } from "../../components/Shared";
@@ -13,7 +13,7 @@ import {
   setRaceTwoDistance,
   setInputsComplete
 } from "./raceTimesSlice";
-import { convertInputToSeconds, convertSecondsToHHMMSS } from "./util";
+import { getSecondsFromInput, getHHMMSSFromSeconds } from "./util";
 
 export default function RaceTimes() {
   const dispatch = useDispatch();
@@ -38,26 +38,26 @@ export default function RaceTimes() {
   };
   const processTimeValue = (e: any) => {
     const value = e.target.value;
-    const seconds = convertInputToSeconds(value);
+    const seconds = getSecondsFromInput(value);
 
     dispatch(
       !hasSecondRace ? setRaceOneTime(seconds) : setRaceTwoTime(seconds)
     );
 
-    const processedValue = convertSecondsToHHMMSS(seconds);
+    const processedValue = getHHMMSSFromSeconds(seconds);
 
     setTimeValue(processedValue);
   };
 
   const handleSecondRace = () => {
-    setTimeValue(!hasSecondRace ? "0:00:00" : convertSecondsToHHMMSS(timeOne));
+    setTimeValue(!hasSecondRace ? "0:00:00" : getHHMMSSFromSeconds(timeOne));
     dispatch(setHasSecondRace(!hasSecondRace))
   };
   
   const calculatePredictions = () => {
     dispatch(setInputsComplete(true))
     dispatch(
-      !hasSecondRace ? setRaceOneTime(convertInputToSeconds(timeValue)) : setRaceTwoTime(convertInputToSeconds(timeValue))
+      !hasSecondRace ? setRaceOneTime(getSecondsFromInput(timeValue)) : setRaceTwoTime(getSecondsFromInput(timeValue))
     );
   }
 

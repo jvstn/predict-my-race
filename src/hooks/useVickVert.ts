@@ -1,5 +1,5 @@
 import { useAppSelector } from "../app/hooks";
-import { riegelFormula } from "./Riegel";
+import { riegelFormula } from "./useRiegel";
 import { findFatigueFactor } from "./util";
 
 export const useVickVert = (newDistance: number) => {
