@@ -3,6 +3,7 @@ import "./App.css";
 import { useAppSelector } from "./app/hooks";
 import Dashboard from "./components/Dashboard";
 import RunnerInputs from "./components/RunnerInputs";
+import moduleName from 'module'
 
 function App() {
   const inputsComplete = useAppSelector(

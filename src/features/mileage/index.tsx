@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {setMileage} from './mileageSlice'
 import { useDispatch } from "react-redux";
-import { GlassButton, TimeInput } from "../../components/Shared";
+import { Button, TimeInput } from "../../components/Shared";
 import { EtchedH3 } from "../../components/Shared/EtchedText";
 
 
@@ -23,7 +23,7 @@ export default function Mileage() {
         onChange={(e) => setAverage(e.target.value)}
       />
       <br />
-      <GlassButton onClick={handleMilage}>Add Mileage</GlassButton>
+      <Button onClick={handleMilage}>Add Mileage</Button>
     </div>
   );
 }

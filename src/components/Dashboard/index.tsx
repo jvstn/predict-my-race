@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 import RacePredictions from './RacePrediction';
 import { CardWrap } from './Elements';
 import BackgroundDiv from './Elements/BackgroundDiv';
+import SidePanel from '../../features/sidePanel';
 
 interface Props {
   
@@ -16,6 +17,7 @@ function Dashboard(): ReactElement {
       <RacePredictions distance={21097.5} />
       <RacePredictions distance={42195} />
     </CardWrap>
+    <SidePanel />
     </BackgroundDiv>
   );
 }

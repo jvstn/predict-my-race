@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { palette } from '../../theme';
 
-const GlassButton = styled.button<{ accent?: boolean}>`
-  background-color: ${({accent}) => accent ? palette.primary : 'transparent'};
+const Button = styled.button<{ primary?: boolean, }>`
+  background-color: ${({primary}) => primary ? palette.primary : palette.secondary};
   height: 7vh;
   width: 15vh;
   margin-bottom: .7em;
@@ -19,4 +19,4 @@ const GlassButton = styled.button<{ accent?: boolean}>`
   
 `;
 
-export default GlassButton
+export default Button

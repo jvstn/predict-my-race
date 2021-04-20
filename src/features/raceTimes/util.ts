@@ -4,7 +4,6 @@ export const getSecondsFromInput = (input: string): number => {
   const val1 = Number(str1)
   const val2 = Number(str2)
   const val3 = Number(str3)
-  console.log(val1, val2, val3)
 
   if (!isNaN(val1) && isNaN(val2) && isNaN(val3)) {
     return val1
@@ -22,7 +21,7 @@ export const getSecondsFromInput = (input: string): number => {
   
 }
 
-export const getHHMMSSFromSeconds = (seconds: number): string => {
+export const getHHMMSSFromSeconds = (seconds: any): string => {
   let hrs = Math.floor(seconds / 3600)
   let mins = Math.floor((seconds / 60) % 60)
   let secs = Math.floor(seconds % 60)
@@ -68,5 +67,14 @@ export const getDistanceInMeters = (distance: string): number => {
   }
   return meters
 }
+
+export const processTimeValue = (e: any, setValue: React.SetStateAction<any>) => {
+  const value = e.target.value;
+  const seconds = getSecondsFromInput(value);
+
+  const processedValue = getHHMMSSFromSeconds(seconds);
+
+  setValue(processedValue);
+};
 
 

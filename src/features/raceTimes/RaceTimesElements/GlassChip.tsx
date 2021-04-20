@@ -1,27 +1,34 @@
-import styled from 'styled-components'
-import React from 'react';
+import styled from "styled-components";
+import React from "react";
 
 interface GC_Props {
   type: string;
   onClick: (e: any) => void;
-  selected?: boolean;
+  selected: boolean;
+  disabled: boolean;
 }
 
-const GlassChip = ({type, onClick, selected}: GC_Props) => {
+const GlassChip = ({ type, onClick, selected, disabled }: GC_Props) => {
   return (
-    <StyledChip selected={selected} onClick={onClick} value={type}>
-    {type}
+    <StyledChip
+      disabled={disabled}
+      selected={selected}
+      onClick={onClick}
+      value={type}
+    >
+      {type}
     </StyledChip>
-  )
-}
+  );
+};
 
-const StyledChip = styled.button<{ selected?: boolean}>`
+const StyledChip = styled.button<{ selected?: boolean }>`
   width: 10vh;
   height: 10vh;
-  background-color: ${({selected}) => selected ? 'rgba(255, 255, 255, 0.1)' : 'transparent' };
-  margin-right: .5em;
-  margin-left: .5em;
-  margin-bottom: .7em;
+  background-color: ${({ selected }) =>
+    selected ? "rgba(255, 255, 255, 0.1)" : "transparent"};
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  margin-bottom: 0.7em;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -31,11 +38,10 @@ const StyledChip = styled.button<{ selected?: boolean}>`
   color: #fff;
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color ease-in 200ms
+    transition: background-color ease-in 200ms;
   }
   &:focus {
-    
-    outline: none
+    outline: none;
   }
-`
-export default GlassChip
+`;
+export default GlassChip;
