@@ -2,17 +2,11 @@ import React, { ReactElement, useState } from 'react'
 import { useAppSelector } from '../../app/hooks'
 import { Button, TimeInput } from '../../components/Shared'
 import { MileageSlider, SidePanelWrap, Title } from './SidePanel.styles'
-import { getHHMMSSFromSeconds, getSecondsFromInput, processTimeValue } from '../raceTimes/util'
+import { getHHMMSSFromSeconds, getSecondsFromInput, processTimeValue } from '../../util'
 import { useDispatch } from 'react-redux'
 import { setRaceOneTime, setRaceTwoTime } from '../raceTimes/raceTimesSlice'
-import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
 import { setMileage } from '../mileage/mileageSlice'
 
-interface Props {
-  
-}
-
-type action = ActionCreatorWithPayload<number, string>
 
 function SidePanel(): ReactElement {
   const dispatch = useDispatch()

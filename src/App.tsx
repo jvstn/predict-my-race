@@ -1,18 +1,19 @@
-import React from "react";
 import "./App.css";
-import { useAppSelector } from "./app/hooks";
-import Dashboard from "./components/Dashboard";
-import RunnerInputs from "./components/RunnerInputs";
-import moduleName from 'module'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { RunnerInputs, Dashboard } from "./components/index";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 function App() {
-  const inputsComplete = useAppSelector(
-    (state) => state.raceTimes.inputsComplete
-  );
   return (
-    <div >
-      {!inputsComplete ? <RunnerInputs /> : <Dashboard />}
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/" component={RunnerInputs} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 

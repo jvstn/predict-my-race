@@ -77,4 +77,6 @@ export const processTimeValue = (e: any, setValue: React.SetStateAction<any>) =>
   setValue(processedValue);
 };
 
+export const getNameFromDistance = (distance: number): string => distance <= 10000 ? `${distance/1000}k` : `${(distance / 1609).toPrecision(3)}mi` 
+
 

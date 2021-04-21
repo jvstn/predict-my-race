@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { getDistanceInMeters } from "./util";
+import { getDistanceInMeters } from "../../util";
 
 interface RaceTimeState {
   hasSecondRace: boolean;

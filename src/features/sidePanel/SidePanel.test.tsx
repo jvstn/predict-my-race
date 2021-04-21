@@ -5,7 +5,7 @@ import { store } from "../../app/store";
 import SidePanel from "./";
 import { setRaceOneTime, setRaceTwoDistance, setRaceTwoTime } from "../raceTimes/raceTimesSlice";
 import { setMileage } from "../mileage/mileageSlice";
-import { getHHMMSSFromSeconds } from "../raceTimes/util";
+import { getHHMMSSFromSeconds } from "../../util";
 
 describe("SidePanel", () => {
   it("should render", () => {

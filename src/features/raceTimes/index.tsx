@@ -13,10 +13,13 @@ import {
   setRaceTwoDistance,
   setInputsComplete,
 } from "./raceTimesSlice";
-import { getSecondsFromInput, getHHMMSSFromSeconds } from "./util";
+import { getSecondsFromInput, getHHMMSSFromSeconds } from "../../util";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function RaceTimes() {
   const dispatch = useDispatch();
+  const history = useHistory()
   const hasSecondRace = useAppSelector(
     (state) => state.raceTimes.hasSecondRace
   );
@@ -46,9 +49,7 @@ export default function RaceTimes() {
     dispatch(
       !hasSecondRace ? setRaceOneTime(seconds) : setRaceTwoTime(seconds)
     );
-
     const processedValue = getHHMMSSFromSeconds(seconds);
-
     setTimeValue(processedValue);
   };
 
@@ -64,6 +65,7 @@ export default function RaceTimes() {
         ? setRaceOneTime(getSecondsFromInput(timeValue))
         : setRaceTwoTime(getSecondsFromInput(timeValue))
     );
+    history.push('/dashboard')
   };
 
   // Disable chips with distance lower than distanceOne
