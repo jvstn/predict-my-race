@@ -11,6 +11,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/information" component={Dashboard} />
+          <Route path="/connect" component={Dashboard} />
           <Route path="/" component={RunnerInputs} />
         </Switch>
       </Router>
