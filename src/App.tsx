@@ -1,4 +1,5 @@
 import "./App.css";
+import 'typeface-exo'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { RunnerInputs, Dashboard } from "./components/index";
 import { Provider } from "react-redux";

@@ -26,5 +26,7 @@ const LogoImg = styled.img`
 const LogoText = styled.h1`
   font-size: 3em;
   color: ${palette.secondary};
+  font-weight: 900;
+  font-family: 'Exo';
 `;
 export default Logo
