@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {setMileage} from './mileageSlice'
 import { useDispatch } from "react-redux";
-import { Button, TimeInput } from "../../components/Shared";
-import { EtchedH3 } from "../../components/Shared/EtchedText";
+import { Button, TimeInput, Headline } from "../../components/Shared";
 import { useHistory } from "react-router";
+
 
 
 export default function Mileage() {
@@ -16,7 +16,7 @@ export default function Mileage() {
 
   return (
     <div>
-      <EtchedH3> Average Mileage?</EtchedH3>
+      <Headline> Average Mileage?</Headline>
       <br />
       <TimeInput
         id="mileage"

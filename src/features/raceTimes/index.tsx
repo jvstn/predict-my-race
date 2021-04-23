@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../app/hooks";
-import { Button, TimeInput } from "../../components/Shared";
-import { EtchedH3 } from "../../components/Shared/EtchedText";
+import { Button, TimeInput, Headline } from "../../components/Shared";
 import { ButtonWrap, GlassChip, TimeWrap } from "./RaceTimesElements";
 import ChipWrap from "./RaceTimesElements/ChipWrap";
 import {
@@ -73,11 +72,11 @@ export default function RaceTimes() {
 
   return (
     <div>
-      <EtchedH3>
+      <Headline>
         {!hasSecondRace
           ? "First Race Time & Distance"
           : "Second Race Time & Distance"}
-      </EtchedH3>
+      </Headline>
       <ChipWrap>
         <GlassChip
           disabled={ifLowerThanFirst(5000)}

@@ -11,7 +11,6 @@ const GlassPane = styled.div`
   margin-right: auto;
   box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  
   width: 60vh;
   height: 80vh;
 `;

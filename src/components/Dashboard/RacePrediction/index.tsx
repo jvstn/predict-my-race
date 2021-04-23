@@ -7,6 +7,8 @@ import {
 } from "../../../util";
 import { useRiegel, useVickVert } from "../../../hooks";
 import Card from "../../Shared/TimeCard";
+import { Headline, Title } from "../../Shared";
+import { RaceTitle } from "./Elements";
 
 interface RP_Props {
   distance: number;
@@ -63,15 +65,15 @@ function RacePredictions({ distance }: RP_Props): ReactElement {
 
   return (
     <Card>
-      <h4>{getNameFromDistance(distance)}</h4>
-      <h4 style={{ color: "white" }}>Time</h4>
-      <h1 style={{ color: "white" }}>
+      <RaceTitle>{getNameFromDistance(distance)}</RaceTitle>
+      <Headline>Time</Headline>
+      <Title>
         {showProvidedTimeOrPrediction(distance)}
-      </h1>
-      <h4 style={{ color: "white" }}> Pace </h4>
-      <h1 style={{ color: "white" }}>
-        {showProvidedPaceOrPrediction(distance)}
-      </h1>
+      </Title>
+      <Headline> Pace </Headline>
+      <Title>
+        {`${showProvidedPaceOrPrediction(distance)}/mi`}
+      </Title>
     </Card>
   );
 }

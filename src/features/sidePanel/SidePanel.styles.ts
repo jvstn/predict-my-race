@@ -19,7 +19,5 @@ export const MileageSlider = styled.input`
   background-color: ${palette.primary};
 `
 
-export const Title = styled.h1`
-  
-`
+
 

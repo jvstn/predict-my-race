@@ -8,13 +8,17 @@ interface Props {
   to: string;
   children: ReactNode;
   Icon: IconType;
+  active?: boolean;
 }
 
-function MenuItem({to, children, Icon }: Props): ReactElement {
+const {primary, white} = palette 
+
+function MenuItem({ to, children, Icon, active }: Props): ReactElement {
+  
   return (
     <LinkWrap>
-    <Icon color={'white'} />
-    <StyledLink to={to}>{children}</StyledLink>
+    <Icon color={active ? primary : white} />
+    <StyledLink active={active} to={to}>{children}</StyledLink>
     </LinkWrap>
   )
 }
@@ -25,14 +29,15 @@ const LinkWrap = styled.div`
   align-items: center;
   margin-left: 3vh;
   margin-right: auto;
+  padding-top: .5vh;
 `
 
-const StyledLink = styled(Link)`
-  color: white;
+const StyledLink = styled(Link)<{ active?: boolean}>`
+  color: ${(props) => (props.active ? primary : white)};
   font-weight: bold;
   text-decoration: none;
   margin-left: 1vh;
-`
+`;
 
 
 

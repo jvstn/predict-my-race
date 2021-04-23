@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { palette } from '../../../theme';
 
 const BackgroundDiv = styled.div`
   position: absolute;
@@ -6,7 +7,8 @@ const BackgroundDiv = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: grey;
-`
+  background-color: ${palette.offWhite};
+  
+`;
 
 export default BackgroundDiv;

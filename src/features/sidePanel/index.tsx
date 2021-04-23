@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from 'react'
 import { useAppSelector } from '../../app/hooks'
-import { Button, TimeInput } from '../../components/Shared'
-import { MileageSlider, SidePanelWrap, Title } from './SidePanel.styles'
+import { Button, Headline, TimeInput, Title } from '../../components/Shared'
+import { MileageSlider, SidePanelWrap } from './SidePanel.styles'
 import { getHHMMSSFromSeconds, getSecondsFromInput, processTimeValue } from '../../util'
 import { useDispatch } from 'react-redux'
 import { setRaceOneTime, setRaceTwoTime } from '../raceTimes/raceTimesSlice'
@@ -37,8 +37,8 @@ function SidePanel(): ReactElement {
     <SidePanelWrap>
       
       <Title> Tweak Inputs </Title>
-      <h3>Mileage</h3>
-      <h1>{mileageTemp}</h1>
+      <Headline>Mileage</Headline>
+      <Title>{mileageTemp}</Title>
       <MileageSlider
         type="range"
         min="1"
@@ -47,7 +47,7 @@ function SidePanel(): ReactElement {
         onChange={e => setMileageTemp(Number(e.target.value))}
         data-testid="mileageRange"
       />
-      <h3>Time One</h3>
+      <Headline>Time One</Headline>
       <TimeInput
         value={timeOneTemp}
         onChange={(e) => setTimeOneTemp(e.target.value)}
@@ -55,7 +55,7 @@ function SidePanel(): ReactElement {
       />
       {timeTwo && (
         <div>
-          <h3>Time Two</h3>
+          <Headline>Time Two</Headline>
           <TimeInput
             value={timeTwoTemp}
             onChange={(e) => setTimeTwoTemp(e.target.value)}
