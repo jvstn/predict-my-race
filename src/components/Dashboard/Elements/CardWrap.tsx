@@ -6,7 +6,7 @@ const CardWrap = styled.div`
   width: 90vh;
   justify-content: space-evenly;
   margin-left: auto;
-  margin-right: 70vh;
+  margin-right: 57vh;
   
 `
 export default CardWrap

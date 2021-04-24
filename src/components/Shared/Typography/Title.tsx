@@ -3,5 +3,6 @@ import { palette } from '../../../theme';
 
 export default styled.h1`
   color: ${palette.white};
-  font-family: "Exo"
-`
+  margin: 2vh 0;
+  font-family: "Exo";
+`;

@@ -6,9 +6,7 @@ const Card = styled.div`
   background-color: ${palette.primary};
   width: 30vh;
   height: auto;
-  margin-right: 1em;
-  margin-left: 1em;
-  margin-top: 1em;
+  margin: 2em 1em 1em 1em;
   border-radius: 7px;
   justify-content: center;
   align-items: center;
