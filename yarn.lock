@@ -11143,6 +11143,11 @@ typeface-exo@^1.1.13:
   resolved "https://registry.yarnpkg.com/typeface-exo/-/typeface-exo-1.1.13.tgz#46d435d2edd4c2b4589283cd0f3a0711e2b1f2b3"
   integrity sha512-7NtSfWR2w7Bw2bKoXa3Tw+s3uMJq7+9lmddmTNV3TBDbbUWbANyZklGciGoum95/1rc3DUqUFaDA4Qt/QxovFQ==
 
+typescript@^4.2.4:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
+  integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
+
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"
