@@ -18,13 +18,18 @@ const LogoWrap = styled.div`
   margin-left: 2vh;
   align-items: center;
   margin-top: -5vh;
+
+  @media (max-width: 800px) {
+    margin: 0;
+    padding: 1vh 0; 
+  }
 `
 const LogoImg = styled.img`
-  height: 3em;
+  height: 7vh;
   margin-right: 1vh;
 `;
 const LogoText = styled.h1`
-  font-size: 3em;
+  font-size: 7vh;
   color: ${palette.secondary};
   font-weight: 900;
   font-family: 'Exo';

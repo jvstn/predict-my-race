@@ -3,6 +3,7 @@ import { Logo, MenuItem, NavbarContainer } from "./NavbarElements";
 import { MdDashboard, MdInfo } from "react-icons/md";
 import {FaStrava} from "react-icons/fa";
 import Highlight from "./NavbarElements/Highlight";
+import MenuIcon from "./NavbarElements/MenuIcon";
 
 function Navbar(): ReactElement {
   return (
@@ -19,6 +20,7 @@ function Navbar(): ReactElement {
       <MenuItem to="/connect" Icon={FaStrava}>
         Connect to Strava
       </MenuItem>
+      <MenuIcon />
     </NavbarContainer>
   );
 }

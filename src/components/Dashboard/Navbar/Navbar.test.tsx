@@ -11,7 +11,7 @@ describe("Navbar", () => {
         <Navbar />
       </Provider>
     );
-    expect(getByText(/Dashboard/i)).toBeInTheDocument();
+    expect(getByText(/Prediction/i)).toBeInTheDocument();
   });
 });
 

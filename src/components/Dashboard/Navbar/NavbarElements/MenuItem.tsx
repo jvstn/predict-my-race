@@ -30,13 +30,21 @@ const LinkWrap = styled.div`
   margin-left: 3vh;
   margin-right: auto;
   padding-top: .5vh;
+
+  @media (max-width: 800px) {
+    display: none;
+  } 
 `
 
-const StyledLink = styled(Link)<{ active?: boolean}>`
+const StyledLink = styled(Link)<{ active?: boolean }>`
   color: ${(props) => (props.active ? primary : white)};
   font-weight: bold;
   text-decoration: none;
   margin-left: 1vh;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 

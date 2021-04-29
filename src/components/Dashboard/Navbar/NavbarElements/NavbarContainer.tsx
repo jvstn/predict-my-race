@@ -9,6 +9,14 @@ const NavbarContainer = styled.div`
   background-color: ${palette.primary};
   position: absolute;
   
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    width: 100vh;
+    background-color: ${palette.offWhite};
+    justify-content: end;
+  }
 `
 
 export default NavbarContainer
