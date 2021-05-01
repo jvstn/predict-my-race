@@ -6,15 +6,16 @@ import {
   getNameFromDistance,
 } from "../../../util";
 import { useRiegel, useVickVert } from "../../../hooks";
-import Card from "../../Shared/TimeCard";
 import { Headline, Title } from "../../Shared";
 import { RaceTitle } from "./Elements";
+import TimeCard from "./Elements/TimeCard";
 
 interface RP_Props {
   distance: number;
+  multiple: number;
 }
 
-function RacePredictions({ distance }: RP_Props): ReactElement {
+function RacePredictions({ distance, multiple }: RP_Props): ReactElement {
   // Get distances of race provided
   const { time: timeOne, distance: distanceOne } = useAppSelector(
     (state) => state.raceTimes.raceOne
@@ -64,7 +65,7 @@ function RacePredictions({ distance }: RP_Props): ReactElement {
   };
 
   return (
-    <Card>
+    <TimeCard multiple={multiple}>
       <RaceTitle>{getNameFromDistance(distance)}</RaceTitle>
       <Headline>Time</Headline>
       <Title>
@@ -74,7 +75,7 @@ function RacePredictions({ distance }: RP_Props): ReactElement {
       <Title>
         {`${showProvidedPaceOrPrediction(distance)}/mi`}
       </Title>
-    </Card>
+    </TimeCard>
   );
 }
 

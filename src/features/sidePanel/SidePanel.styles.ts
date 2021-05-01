@@ -13,6 +13,10 @@ export const SidePanelWrap = styled.div`
   align-items: center;
   flex-direction: column;
   border-bottom-left-radius: 30px;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 
 export const MileageSlider = styled.input`
