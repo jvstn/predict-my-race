@@ -1,14 +1,22 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
+import { DrawerContainer, DrawerItem, Overlay } from './Elements'
+import { MdDashboard, MdInfo } from "react-icons/md";
+import { FaStrava } from "react-icons/fa";
 
 interface Props {
-  
+  open: boolean;
 }
 
-function Drawer({}: Props): ReactElement {
+function Drawer({open}: Props): ReactElement {
   return (
-    <div>
-      
-    </div>
+    <>
+    <DrawerContainer open={open}>
+        <DrawerItem active Icon={MdDashboard} to="/dashboard">Predictions</DrawerItem>
+        <DrawerItem Icon={MdInfo} to="/information">Information</DrawerItem>
+        <DrawerItem Icon={MdDashboard} to="/connect">Connect Strava</DrawerItem>
+      </DrawerContainer>
+      {open && <Overlay />}
+    </>
   )
 }
 

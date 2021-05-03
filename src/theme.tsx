@@ -3,6 +3,7 @@ export const palette = {
   secondary: "#FFC800",
   white: "#fff",
   offWhite: "#F2F6F9",
+  grey: "#D5D4DB",
 };  
 
 

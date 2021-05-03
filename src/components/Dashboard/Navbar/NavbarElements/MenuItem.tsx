@@ -1,19 +1,13 @@
 import styled from 'styled-components';
-import { ReactElement, ReactNode } from 'react'
+import { ReactElement } from 'react'
 import { Link } from 'react-router-dom'
-import { IconType } from 'react-icons/lib';
 import { palette } from '../../../../theme';
+import { IconLink } from '../../../../types';
 
-interface Props {
-  to: string;
-  children: ReactNode;
-  Icon: IconType;
-  active?: boolean;
-}
 
 const {primary, white} = palette 
 
-function MenuItem({ to, children, Icon, active }: Props): ReactElement {
+function MenuItem({ to, children, Icon, active }: IconLink): ReactElement {
   
   return (
     <LinkWrap>

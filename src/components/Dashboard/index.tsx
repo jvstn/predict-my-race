@@ -12,7 +12,15 @@ function Dashboard(): ReactElement {
     setCardPositionMultiplier(cardPositionMultiplier - 1.5);
   const handleBack = () =>
     {setCardPositionMultiplier(cardPositionMultiplier + 1.5);
-    console.log(cardPositionMultiplier)}
+    console.log(cardPositionMultiplier)
+  }
+  
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  // const openTheDrawer = () => {
+  //   setDrawerOpen(true);
+  //   console.log(drawerOpen);
+  // };
   
   return (
     <BackgroundDiv>

@@ -7,7 +7,8 @@ export default styled(HiMenuAlt1)`
   font-size: 7vh;
   color: ${palette.primary};
   position: absolute;
-
+  cursor: pointer;
+  
   @media (min-width: 800px) {
     display: none;
   }

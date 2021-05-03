@@ -1,12 +1,24 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import { Logo, MenuItem, NavbarContainer } from "./NavbarElements";
 import { MdDashboard, MdInfo } from "react-icons/md";
 import {FaStrava} from "react-icons/fa";
 import Highlight from "./NavbarElements/Highlight";
 import MenuIcon from "./NavbarElements/MenuIcon";
+import Drawer from "./NavbarElements/Drawer";
+
+interface Props {
+  open: boolean;
+}
 
 function Navbar(): ReactElement {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const openTheDrawer = () => {
+    setDrawerOpen(true)
+    console.log(drawerOpen);
+    
+  }
   return (
+    <>
     <NavbarContainer>
       <Logo />
       <Highlight>
@@ -20,8 +32,10 @@ function Navbar(): ReactElement {
       <MenuItem to="/connect" Icon={FaStrava}>
         Connect to Strava
       </MenuItem>
-      <MenuIcon />
+      <MenuIcon onClick={openTheDrawer} />
     </NavbarContainer>
+    <Drawer open={drawerOpen} />  
+    </>
   );
 }
 

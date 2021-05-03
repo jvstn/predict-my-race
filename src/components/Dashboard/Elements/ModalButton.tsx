@@ -8,4 +8,7 @@ export default styled(Button)`
   font-family: "Exo";
   font-weight: bold;
   margin: 10vh auto;
+  cursor: pointer;
+
+  
 `
