@@ -13,7 +13,7 @@ function Drawer({open}: Props): ReactElement {
     <DrawerContainer open={open}>
         <DrawerItem active Icon={MdDashboard} to="/dashboard">Predictions</DrawerItem>
         <DrawerItem Icon={MdInfo} to="/information">Information</DrawerItem>
-        <DrawerItem Icon={MdDashboard} to="/connect">Connect Strava</DrawerItem>
+        <DrawerItem Icon={FaStrava} to="/connect">Connect Strava</DrawerItem>
       </DrawerContainer>
       {open && <Overlay />}
     </>

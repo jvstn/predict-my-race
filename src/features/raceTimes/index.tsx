@@ -14,7 +14,7 @@ import {
 } from "./raceTimesSlice";
 import { getSecondsFromInput, getHHMMSSFromSeconds } from "../../util";
 import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
+
 
 export default function RaceTimes() {
   const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import { ReactElement, useState } from "react";
 import { Logo, MenuItem, NavbarContainer } from "./NavbarElements";
 import { MdDashboard, MdInfo } from "react-icons/md";
 import {FaStrava} from "react-icons/fa";
@@ -6,9 +6,6 @@ import Highlight from "./NavbarElements/Highlight";
 import MenuIcon from "./NavbarElements/MenuIcon";
 import Drawer from "./NavbarElements/Drawer";
 
-interface Props {
-  open: boolean;
-}
 
 function Navbar(): ReactElement {
   const [drawerOpen, setDrawerOpen] = useState(false);

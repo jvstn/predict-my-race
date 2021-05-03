@@ -15,12 +15,6 @@ function Dashboard(): ReactElement {
     console.log(cardPositionMultiplier)
   }
   
-  const [openDrawer, setOpenDrawer] = useState(false);
-
-  // const openTheDrawer = () => {
-  //   setDrawerOpen(true);
-  //   console.log(drawerOpen);
-  // };
   
   return (
     <BackgroundDiv>

@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 
-import React, { ReactElement, ReactNode } from 'react'
+import { ReactElement } from 'react'
 import { IconLink } from '../../../../../../types';
 import { palette } from '../../../../../../theme';
-import { Headline } from '../../../../../Shared';
 import { Link } from 'react-router-dom';
 
 
 function DrawerItem({ Icon, children, to, active }: IconLink): ReactElement {
   const ItemIcon = styled(Icon)<{ active?: boolean }>`
-  color: ${({ active }) => (active ? palette.primary : palette.grey)};
+  color: ${({ active }) => active ? palette.primary : palette.grey};
   font-size: 10vw;
   `;
   return (
     <Container>
-      
       <ItemLink to={to}  active={active}>
         <ItemIcon active={active} />
         {children}

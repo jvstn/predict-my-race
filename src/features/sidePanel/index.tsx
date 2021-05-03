@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react'
+import { ReactElement, useState } from 'react'
 import { useAppSelector } from '../../app/hooks'
 import { Button, Headline, TimeInput, Title } from '../../components/Shared'
 import { MileageSlider, SidePanelWrap } from './SidePanel.styles'
@@ -11,8 +11,8 @@ import { setMileage } from '../mileage/mileageSlice'
 function SidePanel(): ReactElement {
   const dispatch = useDispatch()
   // TODO Extract getting times from store into hook
-  const {time: timeOne, distance: distanceOne} = useAppSelector(state => state.raceTimes.raceOne)
-  const {time: timeTwo, distance: distanceTwo} = useAppSelector(state => state.raceTimes.raceTwo)
+  const {time: timeOne} = useAppSelector(state => state.raceTimes.raceOne)
+  const {time: timeTwo} = useAppSelector(state => state.raceTimes.raceTwo)
   // Get typical mileage
   const averageMileage = useAppSelector(state => state.mileage.averageMileage)
 
