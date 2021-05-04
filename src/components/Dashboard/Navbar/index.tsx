@@ -9,11 +9,15 @@ import Drawer from "./NavbarElements/Drawer";
 
 function Navbar(): ReactElement {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const openTheDrawer = () => {
-    setDrawerOpen(true)
-    console.log(drawerOpen);
-    
+  const openDrawer = () => {
+    setDrawerOpen(true)    
   }
+
+  const closeDrawer = () => {
+    setDrawerOpen(false)    
+  }
+  
+
   return (
     <>
     <NavbarContainer>
@@ -29,9 +33,9 @@ function Navbar(): ReactElement {
       <MenuItem to="/connect" Icon={FaStrava}>
         Connect to Strava
       </MenuItem>
-      <MenuIcon onClick={openTheDrawer} />
+      <MenuIcon onClick={openDrawer} />
     </NavbarContainer>
-    <Drawer open={drawerOpen} />  
+    <Drawer open={drawerOpen} close={closeDrawer} />  
     </>
   );
 }

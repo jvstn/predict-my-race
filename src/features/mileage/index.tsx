@@ -8,7 +8,7 @@ import { Button, TimeInput, Headline } from "../../components/Shared";
 export default function Mileage() {
   const dispatch = useDispatch();
   const [average, setAverage] = useState("");
-  const handleMilage = () => {
+  const handleMileage = () => {
     dispatch(setMileage(parseInt(average)))
   }
 
@@ -23,7 +23,7 @@ export default function Mileage() {
         onChange={(e) => setAverage(e.target.value)}
       />
       <br />
-      <Button onClick={handleMilage}>Add Mileage</Button>
+      <Button onClick={handleMileage}>Add Mileage</Button>
     </div>
   );
 }

@@ -8,4 +8,5 @@ export interface IconLink {
   children: ReactNode;
   Icon: IconType;
   active?: boolean;
+  onClick?: () => void;
 }

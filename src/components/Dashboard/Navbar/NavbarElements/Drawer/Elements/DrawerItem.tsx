@@ -6,14 +6,14 @@ import { palette } from '../../../../../../theme';
 import { Link } from 'react-router-dom';
 
 
-function DrawerItem({ Icon, children, to, active }: IconLink): ReactElement {
+function DrawerItem({ Icon, children, to, active, onClick }: IconLink): ReactElement {
   const ItemIcon = styled(Icon)<{ active?: boolean }>`
   color: ${({ active }) => active ? palette.primary : palette.grey};
   font-size: 10vw;
   `;
   return (
     <Container>
-      <ItemLink to={to}  active={active}>
+      <ItemLink to={to} onClick={onClick}  active={active}>
         <ItemIcon active={active} />
         {children}
       </ItemLink>
