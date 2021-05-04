@@ -2,8 +2,8 @@ import { ReactElement, useState } from "react";
 import RacePredictions from "./RacePrediction";
 import { CardWrap, BackgroundDiv, ModalButton } from "./Elements";
 import SidePanel from "../../features/sidePanel";
-import Navbar from "./Navbar";
 import Chevron from "./Elements/Chevron";
+import Navbar from "../Shared/Navbar";
 
 function Dashboard(): ReactElement {
   // mobile card functions min-width: 800px

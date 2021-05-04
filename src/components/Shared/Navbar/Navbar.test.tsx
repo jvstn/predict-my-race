@@ -14,7 +14,7 @@ describe("Navbar", () => {
         </BrowserRouter>
       </Provider>
     );
-    expect(getByText(/Predictions/i)).toBeInTheDocument();
+    expect(getByText(/Dashboard/i)).toBeInTheDocument();
   });
 });
 

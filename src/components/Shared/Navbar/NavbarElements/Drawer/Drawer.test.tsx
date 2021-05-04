@@ -6,13 +6,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe('Drawer', () => {
   it('should render', () => {
+    let close = jest.fn()
     const { getByText } = render(
       <BrowserRouter>
-        <Drawer open={true} />
+        <Drawer open={true} close={close} />
 
       </BrowserRouter>
     )
 
-    expect(getByText(/Prediction/)).toBeInTheDocument()
+    expect(getByText(/Dashboard/)).toBeInTheDocument()
   })
 })
