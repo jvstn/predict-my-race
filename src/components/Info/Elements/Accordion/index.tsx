@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 import { ReactElement, ReactNode, useState } from 'react'
 import Box from './Box';
 import { Body, Title } from '../../../Shared';

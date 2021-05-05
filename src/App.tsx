@@ -5,6 +5,7 @@ import { RunnerInputs, Dashboard } from "./components/index";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import Info from "./components/Info";
+import Connect from "./components/Connect";
 
 function App() {
   
@@ -14,7 +15,7 @@ function App() {
         <Switch>
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/information" component={Info} />
-          <Route path="/connect" component={Dashboard} />
+          <Route path="/connect" component={Connect} />
           <Route path="/" component={RunnerInputs} />
         </Switch>
       </Router>

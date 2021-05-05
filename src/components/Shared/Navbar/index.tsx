@@ -45,7 +45,7 @@ function Navbar({ currentPage }: Props): ReactElement {
         </Highlight>
         <Highlight active={currentPage === "connect"}>
           <MenuItem
-            
+            active={currentPage === "connect"}
             to="/connect"
             Icon={FaStrava}
           >

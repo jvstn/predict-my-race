@@ -4,11 +4,8 @@ import Navbar from '../Shared/Navbar'
 import { Accordion } from './Elements'
 import Container from './Elements/Container';
 
-interface Props {
-  
-}
 
-function Info({}: Props): ReactElement {
+export default function Info(): ReactElement {
   return (
     <BackgroundDiv>
       <Navbar currentPage="info" />
@@ -72,4 +69,3 @@ function Info({}: Props): ReactElement {
   );
 }
 
-export default Info
