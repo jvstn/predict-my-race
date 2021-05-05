@@ -1,5 +1,9 @@
 body {
-  overflow: hidden;
+  background-color: #F2F6F9;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 

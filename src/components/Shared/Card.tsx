@@ -12,6 +12,6 @@ const Card = styled.div`
   align-items: center;
   text-align: center;
   box-shadow: 0 14px 12px 0 rgba(0, 0, 0, 0.17),
-    0 20px 40px 0 rgba(0, 0, 0, 0.3); ;
+    0 20px 40px 0 rgba(0, 0, 0, 0.3);
 `;
 export default Card

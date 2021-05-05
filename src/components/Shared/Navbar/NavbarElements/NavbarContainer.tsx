@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { palette } from '../../../../theme';
 
 const NavbarContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 30vh;
   display: flex;
   flex-direction: column;
   background-color: ${palette.primary};
-  position: absolute;
+  position: fixed;
   
   @media (max-width: 800px) {
     display: flex;
