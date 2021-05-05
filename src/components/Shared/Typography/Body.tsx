@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from '../../../theme';
 
-export default styled.p`
+export default styled.p<{ color?: "dark" | "white" | "primary" }>`
   margin: 2vh 0;
-  color: ${palette.white};
+  color: ${(props) => (props.color ? palette[props.color] : palette.white)};
 `;

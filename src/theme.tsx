@@ -4,6 +4,7 @@ export const palette = {
   white: "#fff",
   offWhite: "#F2F6F9",
   grey: "#D5D4DB",
+  dark: "#000"
 };  
 
 
