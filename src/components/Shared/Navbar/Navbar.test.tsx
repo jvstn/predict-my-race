@@ -10,7 +10,7 @@ describe("Navbar", () => {
     const { getByText } = render(
       <Provider store={store}>
         <BrowserRouter>
-        <Navbar />
+        <Navbar currentPage="dash" />
         </BrowserRouter>
       </Provider>
     );

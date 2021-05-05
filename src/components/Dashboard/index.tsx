@@ -18,7 +18,7 @@ function Dashboard(): ReactElement {
   
   return (
     <BackgroundDiv>
-      <Navbar />
+      <Navbar currentPage="dash" />
       <CardWrap>
         {cardPositionMultiplier < 0 && (
           <Chevron orient="left" onClick={handleBack} />

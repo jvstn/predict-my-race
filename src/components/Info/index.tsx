@@ -11,7 +11,7 @@ interface Props {
 function Info({}: Props): ReactElement {
   return (
     <BackgroundDiv>
-      <Navbar />
+      <Navbar currentPage="info" />
       <Container>
         <Accordion title="How To Use">
           These algorithms give you a nice target pace for your next race. They
