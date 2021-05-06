@@ -14,7 +14,7 @@ export default function Mileage() {
 
   return (
     <div>
-      <Headline> Average Mileage?</Headline>
+      <Headline color="dark"> Average Mileage?</Headline>
       <br />
       <TimeInput
         id="mileage"

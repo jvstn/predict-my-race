@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../app/hooks";
 import { Button, TimeInput, Headline } from "../../components/Shared";
-import { ButtonWrap, GlassChip, TimeWrap } from "./RaceTimesElements";
+import { ButtonWrap, Chip, TimeWrap } from "./RaceTimesElements";
 import ChipWrap from "./RaceTimesElements/ChipWrap";
 import {
   setHasSecondRace,
@@ -68,35 +68,35 @@ export default function RaceTimes() {
   };
 
   // Disable chips with distance lower than distanceOne
-  const ifLowerThanFirst = (type: number): boolean => type <= distanceOne;
+  const ifLowerThanFirst = (distance: number): boolean => hasSecondRace && distance <= distanceOne;
 
   return (
     <div>
-      <Headline>
+      <Headline color="dark">
         {!hasSecondRace
           ? "First Race Time & Distance"
           : "Second Race Time & Distance"}
       </Headline>
       <ChipWrap>
-        <GlassChip
+        <Chip
           disabled={ifLowerThanFirst(5000)}
           selected={distanceValue === "5k"}
           type="5k"
           onClick={handleChip}
         />
-        <GlassChip
+        <Chip
           disabled={ifLowerThanFirst(10000)}
           selected={distanceValue === "10k"}
           type="10k"
           onClick={handleChip}
         />
-        <GlassChip
+        <Chip
           disabled={ifLowerThanFirst(21097.5)}
           selected={distanceValue === "13.1"}
           type="13.1"
           onClick={handleChip}
         />
-        <GlassChip
+        <Chip
           disabled={ifLowerThanFirst(42195)}
           selected={distanceValue === "26.2"}
           type="26.2"
