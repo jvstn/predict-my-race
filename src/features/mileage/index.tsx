@@ -23,7 +23,7 @@ export default function Mileage() {
         onChange={(e) => setAverage(e.target.value)}
       />
       <br />
-      <Button onClick={handleMileage}>Add Mileage</Button>
+      <Button primary onClick={handleMileage}>Add Mileage</Button>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { CardWrap, DashDiv, ModalButton } from "./Elements";
 import SidePanel from "../../features/sidePanel";
 import Chevron from "./Elements/Chevron";
 import Navbar from "../Shared/Navbar";
+import { useHistory } from "react-router";
 
 function Dashboard(): ReactElement {
   // mobile card functions min-width: 800px
@@ -15,6 +16,10 @@ function Dashboard(): ReactElement {
     console.log(cardPositionMultiplier)
   }
   
+  const history = useHistory()
+  const handleChangeInputs = () => {
+    history.push('/')
+  }
   
   return (
     <DashDiv>
@@ -36,7 +41,7 @@ function Dashboard(): ReactElement {
           <Chevron orient="right" onClick={handleNext} />
         )}
       </CardWrap>
-      <ModalButton primary>Change Inputs</ModalButton>
+      <ModalButton primary onClick={handleChangeInputs}>Change Inputs</ModalButton>
       <SidePanel />
     </DashDiv>
   );

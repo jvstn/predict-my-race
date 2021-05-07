@@ -22,11 +22,11 @@ const Chip = ({ type, onClick, selected, disabled }: GC_Props) => {
   );
 };
 
-const StyledChip = styled.button<{ selected?: boolean }>`
+const StyledChip = styled.button<{ selected?: boolean, disabled?: boolean }>`
   width: 10vh;
   height: 10vh;
-  background-color: ${({ selected }) =>
-    selected ? palette.primary : palette.offWhite};
+  background-color: ${({ selected, disabled }) =>
+    selected ? palette.primary : disabled ? palette.grey : palette.offWhite};
   margin: 0 0.5em 0.7em 0.5em;
   border: 1px solid ${palette.primary};
   border-radius: 6px;
@@ -36,7 +36,7 @@ const StyledChip = styled.button<{ selected?: boolean }>`
   transition: ease-in-out 250ms;
 
   &:hover {
-    transform: scale(1.1);
+    transform: ${props => !props.disabled && 'scale(1.1)'};
     transition: ease-in-out 250ms;
   }
   &:focus {
