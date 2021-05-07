@@ -59,6 +59,6 @@ describe("RacePredictions", () => {
     );
     
     // Test Marthon prediction
-    expect(getByText(/3:46:42/i)).toBeInTheDocument();
+    expect(getByText(/3:47:36/i)).toBeInTheDocument();
   });
 });

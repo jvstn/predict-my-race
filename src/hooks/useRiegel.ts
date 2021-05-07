@@ -18,7 +18,7 @@ export const useRiegel = (newDistance: number) =>  {
   return riegelFormula(timeOne, distanceOne, newDistance, fatigueFactor)
 }
 
-// Implement algo found here http://bit.ly/marathon-algos
+// Implement algo from here http://bit.ly/marathon-algos
 export const riegelFormula = (
   timeOne: number,
   distanceOne: number,
