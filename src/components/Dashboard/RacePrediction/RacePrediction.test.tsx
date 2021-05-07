@@ -1,11 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import { store } from "../../../app/store";
-import RacePredictions from "./";
-import raceTimesReducer, {
+import RacePrediction from ".";
+import {
   setRaceOneTime,
-  initialState,
   setRaceOneDistance,
   setRaceTwoTime,
   setRaceTwoDistance,
@@ -22,12 +21,14 @@ describe("RacePredictions", () => {
     store.dispatch(setRaceOneDistance("5k"));
 
     // Render components
+    const multiple = 1.3
     const { getByText } = render(
+      
       <Provider store={store}>
-        <RacePredictions distance={5000} />
-        <RacePredictions distance={10000} />
-        <RacePredictions distance={21097} />
-        <RacePredictions distance={42195} />
+        <RacePrediction multiple={multiple} distance={5000} />
+        <RacePrediction multiple={multiple} distance={10000} />
+        <RacePrediction multiple={multiple} distance={21097} />
+        <RacePrediction multiple={multiple} distance={42195} />
       </Provider>
     );
 
@@ -48,11 +49,12 @@ describe("RacePredictions", () => {
     store.dispatch(setRaceTwoDistance("10k"));
 
     // Render components
+    const multiple = 1.3;
     const { getByText } = render(
       <Provider store={store}>
-        <RacePredictions distance={5000} />
-        <RacePredictions distance={10000} />
-        <RacePredictions distance={42195} />
+        <RacePrediction multiple={multiple} distance={5000} />
+        <RacePrediction multiple={multiple} distance={10000} />
+        <RacePrediction multiple={multiple} distance={42195} />
       </Provider>
     );
     

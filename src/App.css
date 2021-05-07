@@ -2,6 +2,12 @@ body {
   background-color: #F2F6F9;
 }
 
+@media screen and (max-width: 800px) {
+  body {
+    /* overflow: hidden; */
+  }
+}
+
 ::-webkit-scrollbar {
   width: 0;
 }

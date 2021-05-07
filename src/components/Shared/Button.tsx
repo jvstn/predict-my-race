@@ -1,12 +1,14 @@
 import styled from 'styled-components'
-import { palette } from '../../theme';
+import { palette, shadows } from '../../theme';
 
-const Button = styled.button<{ primary?: boolean, }>`
-  background-color: ${({ primary }) => primary ? palette.primary : palette.grey};
+const Button = styled.button<{ primary?: boolean }>`
+  background-color: ${({ primary }) =>
+    primary ? palette.primary : palette.grey};
   min-width: 20vh;
   padding: 1%;
   margin: 3%;
-  box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.2);
+  border: 0;
+  box-shadow: ${shadows['bs-1']};
   border-radius: 6px;
   color: #fff;
   font-family: "Exo";

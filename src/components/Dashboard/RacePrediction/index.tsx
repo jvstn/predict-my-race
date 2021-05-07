@@ -6,8 +6,8 @@ import {
   getNameFromDistance,
 } from "../../../util";
 import { useRiegel, useVickVert } from "../../../hooks";
-import { Headline, Title } from "../../Shared";
-import { RaceTitle } from "./Elements";
+import { Headline } from "../../Shared";
+import { RacePace, RaceTitle } from "./Elements";
 import TimeCard from "./Elements/TimeCard";
 
 interface RP_Props {
@@ -68,13 +68,13 @@ function RacePredictions({ distance, multiple }: RP_Props): ReactElement {
     <TimeCard multiple={multiple}>
       <RaceTitle>{getNameFromDistance(distance)}</RaceTitle>
       <Headline>Time</Headline>
-      <Title>
+      <RacePace>
         {showProvidedTimeOrPrediction(distance)}
-      </Title>
+      </RacePace>
       <Headline> Pace </Headline>
-      <Title>
+      <RacePace>
         {`${showProvidedPaceOrPrediction(distance)}/mi`}
-      </Title>
+      </RacePace>
     </TimeCard>
   );
 }

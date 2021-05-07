@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from '../../../theme';
 
-const BackgroundDiv = styled.div`
+const DashDiv = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -10,8 +10,9 @@ const BackgroundDiv = styled.div`
   background-color: ${palette.offWhite};
   @media (max-width: 800px) {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    overflow: hidden;
   }
 `;
 
-export default BackgroundDiv;
+export default DashDiv;

@@ -10,10 +10,10 @@ const CardWrap = styled.div`
   
   @media (max-width: 800px) {
     width: 200vw;
-    margin: 25vh 0 0 32vw;
+    margin: 25vh auto 0 25vw;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: flex-start;
+    
   }
 `
 export default CardWrap
