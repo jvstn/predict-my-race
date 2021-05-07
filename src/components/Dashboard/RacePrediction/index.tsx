@@ -49,8 +49,7 @@ function RacePredictions({ distance, multiple }: RP_Props): ReactElement {
   // If distance is one of times provided show provided else show prediction
   const showProvidedTimeOrPrediction = (distance: number) => {
     if (distance === distanceOne) return getHHMMSSFromSeconds(timeOne);
-    if (distance === distanceTwo)
-      return timeTwo && getHHMMSSFromSeconds(timeTwo);
+    if (distance === distanceTwo) return timeTwo && getHHMMSSFromSeconds(timeTwo);
 
     return showPredictedTime(distance);
   };

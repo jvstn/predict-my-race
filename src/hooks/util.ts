@@ -2,6 +2,6 @@ export function findFatigueFactor(timeOne: number, timeTwo: number, distanceOne:
       let logOfTime = Math.log((timeTwo / timeOne));
       let logOfDistance = Math.log((distanceTwo / distanceOne));
 
-      return logOfDistance / logOfTime
+      return logOfTime / logOfDistance
       
     }
