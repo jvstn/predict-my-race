@@ -11,6 +11,6 @@ describe("Connect", () => {
       </BrowserRouter>
     );
 
-    expect(getByText(/Connect now/i)).toBeInTheDocument();
+    expect(getByText(/Coming soon/i)).toBeInTheDocument();
   });
 });

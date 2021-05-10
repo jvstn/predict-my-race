@@ -55,7 +55,7 @@ function Navbar({ currentPage }: Props): ReactElement {
         </Highlight>
         <MenuIcon onClick={openDrawer} />
       </NavbarContainer>
-      <Drawer open={drawerOpen} close={closeDrawer} />
+      <Drawer currentPage={currentPage} open={drawerOpen} close={closeDrawer} />
     </>
   );
 }

@@ -1,29 +1,40 @@
 import { ReactElement } from "react";
 import { DrawerContainer, DrawerItem, Overlay } from "./Elements";
-import { MdDashboard, MdInfo, MdArrowBack } from "react-icons/md";
+import { MdDashboard, MdInfo } from "react-icons/md";
 import { FaStrava } from "react-icons/fa";
-import { useLocation } from "react-router";
 
 interface Props {
   open: boolean;
   close: () => void;
+  currentPage: string;
 }
 
-function Drawer({ open, close }: Props): ReactElement {
-  const location = useLocation();
+function Drawer({ open, close, currentPage }: Props): ReactElement {
   return (
     <>
       <DrawerContainer open={open}>
-        <DrawerItem to={location.pathname} onClick={close} Icon={MdArrowBack}>
-          Back
-        </DrawerItem>
-        <DrawerItem active Icon={MdDashboard} onClick={close} to="/dashboard">
+        <DrawerItem
+          active={currentPage === "dash"}
+          Icon={MdDashboard}
+          onClick={close}
+          to="/dashboard"
+        >
           Dashboard
         </DrawerItem>
-        <DrawerItem Icon={MdInfo} onClick={close} to="/information">
+        <DrawerItem
+          active={currentPage === "info"}
+          Icon={MdInfo}
+          onClick={close}
+          to="/information"
+        >
           Information
         </DrawerItem>
-        <DrawerItem Icon={FaStrava} onClick={close} to="/connect">
+        <DrawerItem
+          active={currentPage === "connect"}
+          Icon={FaStrava}
+          onClick={close}
+          to="/connect"
+        >
           Connect Strava
         </DrawerItem>
       </DrawerContainer>
