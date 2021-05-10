@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { palette } from '../../../theme';
 import { Button } from '../../Shared';
 
 export default styled(Button)`
   background-color: #fc4c02;
+  color: ${palette.white};
   width: 20vw;
   padding: 4%;
   height: 8vh;

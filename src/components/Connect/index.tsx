@@ -17,7 +17,7 @@ export default function Connect(): ReactElement {
           best.
         </Headline>
         <StravaButton>
-          <FaStrava size={"2rem"} /> <Headline>Connect Now</Headline>
+          <FaStrava size={"2rem"} /> <Headline>Coming Soon</Headline>
         </StravaButton>
       </Papyrus>
     </BackgroundDiv>
