@@ -1,10 +1,11 @@
 import { ReactElement, useState } from "react";
-import { Logo, MenuItem, NavbarContainer } from "./NavbarElements";
+import { MenuItem, NavbarContainer } from "./NavbarElements";
 import { MdDashboard, MdInfo } from "react-icons/md";
 import { FaStrava } from "react-icons/fa";
 import Highlight from "./NavbarElements/Highlight";
 import MenuIcon from "./NavbarElements/MenuIcon";
 import Drawer from "./NavbarElements/Drawer";
+import Logo from "../Logo";
 
 interface Props {
   currentPage: "dash" | "info" | "connect";

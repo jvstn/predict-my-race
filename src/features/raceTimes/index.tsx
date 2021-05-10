@@ -14,6 +14,7 @@ import {
 } from "./raceTimesSlice";
 import { getSecondsFromInput, getHHMMSSFromSeconds } from "../../util";
 import { useHistory } from "react-router";
+import Logo from "../../components/Shared/Logo";
 
 
 export default function RaceTimes() {
@@ -71,7 +72,8 @@ export default function RaceTimes() {
   const ifLowerThanFirst = (distance: number): boolean => hasSecondRace && distance <= distanceOne;
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column"}}>
+      <Logo />
       <Headline color="dark">
         {!hasSecondRace
           ? "First Race Time & Distance"

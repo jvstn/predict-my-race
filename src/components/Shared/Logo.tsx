@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, { ReactElement } from 'react'
-import PMRLogo from '../../../../assets/predict race logo.png'
-import { palette } from '../../../../theme';
+import PMRLogo from '../../assets/predict race logo.png'
+import { palette } from '../../theme';
 
 function Logo(): ReactElement {
   return (
@@ -15,7 +15,7 @@ function Logo(): ReactElement {
 const LogoWrap = styled.div`
   display: flex;
   margin-right: auto;
-  margin-left: 2vh;
+  margin-left: auto;
   align-items: center;
   margin-top: -5vh;
 
